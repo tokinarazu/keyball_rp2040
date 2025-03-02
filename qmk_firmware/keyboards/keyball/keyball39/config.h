@@ -44,7 +44,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // RGB LED settings
 #define WS2812_DI_PIN       GP0
 #ifdef RGBLIGHT_ENABLE
-#    define RGBLED_NUM      48
+#    define RGBLIGHT_LED_COUNT      48
 #    define RGBLED_SPLIT    { 24, 24 }  // (24 + 22)
 #    ifndef RGBLIGHT_LIMIT_VAL
 #        define RGBLIGHT_LIMIT_VAL  125 // limitated for power consumption
@@ -78,6 +78,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define SPI_SCK_PIN GP22
 #define SPI_MISO_PIN GP20
 #define SPI_MOSI_PIN GP23
+
+#define POINTING_DEVICE_CS_PIN GP21
 
 /* define RP2040 boot用 */
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET // Activates the double-tap behavior
