@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "lib/keyball/keyball.h"
 #include "features/translate_ansi_to_jis.h"
 #include "features/select_word.h"
-#include "features/achordion.h"
+// #include "features/achordion.h"
 
 enum custom_keycodes {
   MY_MACRO_0 = SAFE_RANGE,  // 0x7E40  User0
@@ -344,25 +344,21 @@ void keyball_oled_render_ballinfo_custom(void) {
 
 bool isRecording = false;
 // Triggered when you start recording a macro.
-bool dynamic_macro_record_start_user(int8_t direction) {
+void dynamic_macro_record_start_user(int8_t direction) {
     isRecording = true;
-    return true;
 }
 
 // Triggered when you play back a macro.
-bool dynamic_macro_play_user(int8_t direction) {
-  return true;
+void dynamic_macro_play_user(int8_t direction) {
 }
 
 // Triggered on each keypress while recording a macro.
-bool dynamic_macro_record_key_user(int8_t direction, keyrecord_t *record) {
-  return true;
+void dynamic_macro_record_key_user(int8_t direction, keyrecord_t *record) {
 }
 
 // Triggered when the macro recording is stopped.
-bool dynamic_macro_record_end_user(int8_t direction) {
+void dynamic_macro_record_end_user(int8_t direction) {
     isRecording = false;
-    return true;
 }
 #endif
 
@@ -611,7 +607,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 //    return false;
 //  }
 
-  if (!process_achordion(keycode, record)) { return false; }
+//  if (!process_achordion(keycode, record)) { return false; }
 
   if (record->event.pressed) {
     static uint32_t last_key_pressed = 0;

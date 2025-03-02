@@ -31,13 +31,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define SOFT_SERIAL_PIN         GP1
 #define SPLIT_HAND_MATRIX_GRID  GP27, GP9
 #define SPLIT_HAND_MATRIX_GRID_LOW_IS_LEFT
-#define SPLIT_USB_DETECT
-#define SPLIT_USB_TIMEOUT       1000
+//#define SPLIT_USB_DETECT
+//#define SPLIT_USB_TIMEOUT       1000
 
 // If your PC does not recognize Keyball, try setting this macro. This macro
 // increases the firmware size by 200 bytes, so it is disabled by default, but
 // it has been reported to work well in such cases.
-#define SPLIT_WATCHDOG_ENABLE
+//#define SPLIT_WATCHDOG_ENABLE
 
 #define SPLIT_TRANSACTION_IDS_KB KEYBALL_GET_INFO, KEYBALL_GET_MOTION, KEYBALL_SET_CPI
 
