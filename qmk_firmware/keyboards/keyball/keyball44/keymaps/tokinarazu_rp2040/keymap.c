@@ -158,9 +158,9 @@ color.h
 */
 // clang-format on
 
-void keyboard_post_init_user() {
+void pointing_device_init_user(void) {
   // 起動時に自動マウスレイヤー（AML）を強制的にONにする
-  keyball_set_auto_mouse(true); 
+  set_auto_mouse_enabled(true);
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
