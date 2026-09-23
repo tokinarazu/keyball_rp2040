@@ -21,15 +21,13 @@ jobs:
 
     name: Build a firmware ${{ inputs.keyboard }}:${{ inputs.keymap }}
 
-    runs-on: ubuntu-latest
-#    runs-on:  ubuntu-22.04
+    runs-on: ubuntu-22.04
     container:
-      image: ghcr.io/qmk/qmk_cli:latest
-
+      image: ghcr.io/qmk/qmk_cli@sha256:2dc05fc9f32efebd6b05c2b8676ee548358bc7e151e9dbf4dac6b6eed4513b07
     steps:
 
     - name: Checkout source
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     - name: Checkout qmk_firmware
       uses: ./.github/actions/checkout-qmk_firmware
@@ -49,7 +47,7 @@ jobs:
       run: qmk compile -j 4 -kb keyball/${{ inputs.keyboard }} -km ${{ inputs.keymap }}
 
     - name: Archive built firmware
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: ${{ inputs.keyboard }}-${{ inputs.keymap }}-firmware
         path: __qmk__/*.uf2
